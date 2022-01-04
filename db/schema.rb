@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_050644) do
+ActiveRecord::Schema.define(version: 2022_01_04_192755) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_050644) do
     t.string "image_url"
     t.integer "season_id"
     t.integer "trail_id"
+    t.boolean "added"
     t.index ["season_id"], name: "index_items_on_season_id"
     t.index ["trail_id"], name: "index_items_on_trail_id"
   end

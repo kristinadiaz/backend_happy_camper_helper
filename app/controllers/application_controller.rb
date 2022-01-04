@@ -29,4 +29,7 @@ class ApplicationController < Sinatra::Base
     Season.fourth.items.to_json
   end
 
+  post "/items" do 
+  end
+
 end
