@@ -30,6 +30,19 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/items" do 
+    Item.create(
+      name: params[:name],
+      description: params[:description],
+      shopping_url: params[:shopping_url],
+      image_url: params[:image_url],
+      season_id: params[:season_id],
+      trail_id: params[:trail_id],
+      added: params[:added]
+    ).to_json
+  end
+
+  delete "/items/:id" do 
+    Item.find(params[:id]).destroy.to_json
   end
 
 end
