@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_192755) do
     t.string "image_url"
     t.integer "season_id"
     t.integer "trail_id"
-    t.boolean "added"
+    t.boolean "added", default: false
     t.index ["season_id"], name: "index_items_on_season_id"
     t.index ["trail_id"], name: "index_items_on_trail_id"
   end
