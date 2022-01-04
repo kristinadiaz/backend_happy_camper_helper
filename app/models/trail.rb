@@ -1,4 +1,7 @@
 class Trail < ActiveRecord::Base 
-    def test 
-    end
+    has_many :items
+    has_many :seasons, through: :items
+
+    
+    
 end
