@@ -1,5 +1,57 @@
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+# Items
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+Item.create(name: , description: , shopping_url:)
+
+# Trails
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+Trail.create(trail_name: , trail_url:)
+
+# Seasons
+Season.create(season_name: "Fall", degree: , item_id: , trail_id:)
+Season.create(season_name: "Winter", degree: , item_id: , trail_id:)
+Season.create(season_name: "Spring", degree: , item_id: , trail_id:)
+Season.create(season_name: "Summer", degree: , item_id: , trail_id:)
 
 puts "✅ Done seeding!"
