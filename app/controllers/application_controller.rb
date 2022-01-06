@@ -17,22 +17,6 @@ class ApplicationController < Sinatra::Base
     Trail.all.to_json
   end
 
-  get "/fall" do 
-    Season.first.items.to_json
-  end
-
-  get "/winter" do
-    Season.second.items.to_json
-  end
-
-  get "/spring" do 
-    Season.third.items.to_json
-  end
-
-  get "/summer" do 
-    Season.fourth.items.to_json
-  end
-
   post "/items" do 
     Item.create(
       name: params[:name],
@@ -47,6 +31,23 @@ class ApplicationController < Sinatra::Base
 
   delete "/items/:id" do 
     Item.find(params[:id]).destroy.to_json
+  end
+
+  get "/my_list" do 
+    MyList.all.to_json
+  end
+
+  post "/my_list" do 
+   list = Item.find(params[:id]) 
+   list.update(MyList.create(
+    item_id: list.id
+   )).to_json
+  end
+
+  delete "/my_list/:id" do 
+    list = MyList.find(params[:id])
+    list.destroy
+    list.to_json
   end
 
 end

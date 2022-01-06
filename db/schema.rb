@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_192755) do
+ActiveRecord::Schema.define(version: 2022_01_06_000234) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 2022_01_04_192755) do
     t.boolean "added", default: false
     t.index ["season_id"], name: "index_items_on_season_id"
     t.index ["trail_id"], name: "index_items_on_trail_id"
+  end
+
+  create_table "my_lists", force: :cascade do |t|
+    t.integer "item_id"
+    t.index ["item_id"], name: "index_my_lists_on_item_id"
   end
 
   create_table "seasons", force: :cascade do |t|
