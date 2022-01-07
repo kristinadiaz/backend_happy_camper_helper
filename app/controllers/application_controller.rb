@@ -18,15 +18,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/items" do 
-    Item.create(
+    item = Item.create({
       name: params[:name],
       description: params[:description],
       shopping_url: params[:shopping_url],
       image_url: params[:image_url],
-      season_id: params[:season_id],
-      trail_id: params[:trail_id],
-      added: params[:added]
-    ).to_json
+    })
+    item.to_json
   end
 
   delete "/items/:id" do 
@@ -34,20 +32,19 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/my_list" do 
-    MyList.all.to_json
+    # only the items that are true
+    Item.where(added: true).to_json
   end
 
-  post "/my_list" do 
-   list = Item.find(params[:id]) 
-   list.update(MyList.create(
-    item_id: list.id
-   )).to_json
+  patch "/my_list" do 
+   Item.where(id: params[:id]).update_all(added: true).to_json 
   end
 
-  delete "/my_list/:id" do 
-    list = MyList.find(params[:id])
-    list.destroy
-    list.to_json
-  end
+
+  # delete "/my_list/:id" do 
+  #   list = MyList.find(params[:id])
+  #   list.destroy
+  #   list.to_json
+  # end
 
 end
