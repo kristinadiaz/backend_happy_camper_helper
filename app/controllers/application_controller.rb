@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
       description: params[:description],
       shopping_url: params[:shopping_url],
       image_url: params[:image_url],
+      added: true
     })
     item.to_json
   end
